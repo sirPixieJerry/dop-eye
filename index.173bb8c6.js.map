@@ -1,0 +1,1 @@
+{"mappings":"ACCE,QAAQ,GAAG,CAAC","sources":["<anon>","src/ts/index.ts"],"sourcesContent":["var $4aa1cd84f89e5a94$exports = {};\n(()=>{\n    console.log(\"Hello, world!\");\n})();\n\n\n//# sourceMappingURL=index.173bb8c6.js.map\n","((): void => {\n  console.log('Hello, world!');\n})();\n"],"names":["console","log"],"version":3,"file":"index.173bb8c6.js.map"}
