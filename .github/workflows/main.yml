@@ -32,7 +32,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20.x
-          registry-url: "https://registry.npmjs.org"
+          registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies
         run: npm install
       - name: TypeScript Check
@@ -43,7 +43,7 @@ jobs:
         run: npm run test
       - name: Build
         run: npm run build
-      - name: "Upload build artifact"
+      - name: 'Upload build artifact'
         uses: actions/upload-artifact@v4
         with:
           name: dist
@@ -57,16 +57,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: "Prepare: Bump version and push tag"
+      - name: 'Prepare: Bump version and push tag'
         id: changelog
         uses: TriPSs/conventional-changelog-action@v5
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
-          skip-on-empty: "true"
-          output-file: "false"
-          git-message: "chore(release): {version}"
-          tag-prefix: "v"
-      - name: "Release: Create Release on Github"
+          skip-on-empty: 'true'
+          output-file: 'false'
+          git-message: 'chore(release): {version}'
+          tag-prefix: 'v'
+      - name: 'Release: Create Release on Github'
         if: ${{ steps.changelog.outputs.skipped != 'true' && steps.changelog.outputs.tag != ''}}
         id: create_release
         uses: softprops/action-gh-release@v1
@@ -93,4 +93,3 @@ jobs:
         with:
           branch: gh-pages
           folder: ./dist
-          target-folder: ./docs
