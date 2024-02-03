@@ -1,9 +1,8 @@
 export const colorSVG = (
-  box: HTMLElement | null,
-  path: SVGElement | null,
+  box: HTMLElement,
+  path: SVGElement,
   color: string,
 ): void => {
-  if (box === null || path === null) return;
   box.style.backgroundColor = color;
   path.style.fill = color;
 };
