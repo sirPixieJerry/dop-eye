@@ -1,13 +1,17 @@
 import { generateBackgroundColor } from './generateBackgroundColor';
 import { colorSVG } from './colorSVG';
 import { colorReflection } from './colorReflection';
-import { recordItemColor } from './recordItemColor';
+import { recordItemColor, rewindColors } from './recordItemColor';
 
 type ClickableElement = HTMLElement & { id: string };
+const { resetTimer, updateStopSignal } = rewindColors();
 
 export const handleClickableElement = (): void => {
   document.addEventListener('click', (evt): void => {
     if (evt.target === null) return;
+
+    updateStopSignal(false);
+    resetTimer();
 
     const color = generateBackgroundColor();
     const target = evt.target as ClickableElement;
