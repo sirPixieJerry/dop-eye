@@ -1,6 +1,7 @@
 import { generateBackgroundColor } from './generateBackgroundColor';
 import { colorSVG } from './colorSVG';
 import { colorReflection } from './colorReflection';
+import { recordColorChange } from './recordColorChange';
 
 type ClickableElement = HTMLElement & { id: string };
 
@@ -21,15 +22,18 @@ export const handleClickableElement = (): void => {
     switch (target.id) {
       case 'box':
       case 'path':
+        recordColorChange(target);
         colorSVG(box, path, color);
         break;
 
       case 'reflex-one':
       case 'reflex-two':
+        recordColorChange(target);
         colorReflection(reflexOne, reflexTwo, color);
         break;
 
       default:
+        recordColorChange(target);
         target.style.backgroundColor = color;
     }
   });
