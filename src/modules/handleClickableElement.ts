@@ -1,7 +1,7 @@
 import { generateBackgroundColor } from './generateBackgroundColor';
 import { colorSVG } from './colorSVG';
 import { colorReflection } from './colorReflection';
-import { recordItemColor } from './recordItemColor';
+import { recordColorChange } from './recordColorChange';
 import { resetTimer, updateStopSignal } from './rewindColors';
 
 export type StepType = {
@@ -27,18 +27,18 @@ export const handleClickableElement = (): void => {
     switch (target.id) {
       case 'box':
       case 'path':
-        recordItemColor(steps, target);
+        recordColorChange(target);
         colorSVG(color);
         break;
 
       case 'reflex-one':
       case 'reflex-two':
-        recordItemColor(steps, target);
+        recordColorChange(target);
         colorReflection(color);
         break;
 
       default:
-        recordItemColor(steps, target);
+        recordColorChange(target);
         target.style.backgroundColor = color;
     }
   });
