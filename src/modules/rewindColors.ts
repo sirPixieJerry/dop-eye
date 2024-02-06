@@ -1,5 +1,5 @@
 import { steps } from './handleClickableElement';
-import { applyColorFromStep } from './applyColorfromStep';
+import { applyColorFromStep } from './applyColorFromStep';
 
 const DELAY = 1000;
 const TIMEOUT = 5000;
