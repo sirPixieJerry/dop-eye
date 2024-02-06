@@ -1,9 +1,4 @@
-type StepType = {
-  target: string;
-  color: string;
-};
-
-const steps: StepType[] = [];
+import { type StepType, steps } from './handleClickableElement';
 
 const pushStep = (step: StepType): void => {
   steps.push(step);
