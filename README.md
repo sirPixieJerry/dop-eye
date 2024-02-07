@@ -23,6 +23,7 @@ Visit the [life demo](sirpixiejerry.github.io/dop-eye/) to try it yourself.
 
 - [x] change element color
 - [x] rewind to original color
-- [ ] scroll steps
-- [ ] add user interface
+- [x] scroll steps
+- [ ] improve scroll steps feature and cleanup event listeners
+- [ ] add user menu
 - [ ] optimization for mobile devices
