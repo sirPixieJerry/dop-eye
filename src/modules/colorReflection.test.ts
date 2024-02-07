@@ -23,7 +23,10 @@ describe('colorReflection', () => {
 
     colorReflection('red');
 
-    expect(reflexOne!.style.backgroundColor).to.equal('red');
-    expect(reflexTwo!.style.backgroundColor).to.equal('red');
+    if (!reflexOne) throw new Error('reflexOne not found');
+    if (!reflexTwo) throw new Error('reflexTwo not found');
+
+    expect(reflexOne.style.backgroundColor).to.equal('red');
+    expect(reflexTwo.style.backgroundColor).to.equal('red');
   });
 });
