@@ -6,13 +6,14 @@ const TIMEOUT = 5000;
 
 let idleTime: NodeJS.Timeout;
 let interval: NodeJS.Timeout;
-let stopSignal = false;
-let initialDelay = DELAY;
+let stopRewind = true;
+let initialDelay: number;
 
 const rewind = (): void => {
-  if (!stopSignal) return;
   const removeStep = (): void => {
+    if (stopRewind) return;
     if (steps.length > 0) {
+      console.log(steps.length);
       const removedStep = steps.pop();
       applyColorFromStep(removedStep);
 
@@ -24,15 +25,16 @@ const rewind = (): void => {
   removeStep();
 };
 
-export const updateStopSignal = (value: boolean): void => {
-  stopSignal = value;
+export const setStopRewind = (arg: boolean): void => {
+  stopRewind = arg;
 };
 
 export const resetTimer = (): void => {
+  if (stopRewind) return;
   clearTimeout(idleTime);
   clearTimeout(interval);
+  initialDelay = DELAY;
   idleTime = setTimeout(() => {
-    updateStopSignal(true);
     rewind();
   }, TIMEOUT);
 };
