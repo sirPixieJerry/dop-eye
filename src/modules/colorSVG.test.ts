@@ -27,6 +27,6 @@ describe('colorSVG', () => {
     if (!path) throw new Error('path not found');
 
     expect(box.style.backgroundColor).to.equal('red');
-    expect(path.getAttribute('fill')).to.equal('red');
+    expect(path.style.fill).to.equal('red');
   });
 });
