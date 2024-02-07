@@ -5,5 +5,5 @@ export const colorSVG = (color: string): void => {
   if (box === null || path === null) return;
 
   box.style.backgroundColor = color;
-  path.style.fill = color;
+  path.setAttribute('fill', color);
 };
