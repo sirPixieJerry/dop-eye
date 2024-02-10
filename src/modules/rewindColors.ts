@@ -7,11 +7,12 @@ const TIMEOUT = 5000;
 let idleTime: NodeJS.Timeout;
 let interval: NodeJS.Timeout;
 let stopRewind = true;
+let pauseRewind = false;
 let initialDelay: number;
 
 const rewind = (): void => {
   const removeStep = (): void => {
-    if (stopRewind) return;
+    if (stopRewind || pauseRewind) return;
     if (steps.length > 0) {
       console.log(steps.length);
       const removedStep = steps.pop();
@@ -29,8 +30,12 @@ export const setStopRewind = (arg: boolean): void => {
   stopRewind = arg;
 };
 
+export const setPauseRewind = (): void => {
+  pauseRewind = !pauseRewind;
+};
+
 export const resetTimer = (): void => {
-  if (stopRewind) return;
+  if (stopRewind || pauseRewind) return;
   clearTimeout(idleTime);
   clearTimeout(interval);
   initialDelay = DELAY;

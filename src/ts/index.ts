@@ -1,5 +1,6 @@
-import { handleClickableElement } from '../modules';
+import { handleClickableElement, handleMenuButtons } from '../modules';
 
 ((): void => {
   handleClickableElement();
+  handleMenuButtons();
 })();
