@@ -2,29 +2,11 @@ import { generateBackgroundColor } from './generateBackgroundColor';
 import { colorSVG } from './colorSVG';
 import { colorReflection } from './colorReflection';
 import { recordColorChange } from './recordColorChange';
-import { resetTimer, setStopRewind } from './rewindColors';
-import { scrollThroughSteps } from './scrollThroughSteps';
-
-let isScroll = false;
+import { resetTimer } from './rewindColors';
 
 type ClickableElement = HTMLElement & { id: string };
 
 export const handleClickableElement = (): void => {
-  document.addEventListener('mousedown', (): void => {
-    isScroll = true;
-    setStopRewind(true);
-  });
-
-  document.addEventListener('mouseup', (): void => {
-    isScroll = false;
-    setStopRewind(false);
-  });
-
-  document.addEventListener('mousemove', (evt) => {
-    if (!isScroll) return;
-    scrollThroughSteps(evt.clientX);
-  });
-
   document.addEventListener('click', (evt): void => {
     resetTimer();
     if (evt.target === null) return;
