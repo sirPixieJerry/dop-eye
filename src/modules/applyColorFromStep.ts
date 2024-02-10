@@ -1,6 +1,6 @@
 import { colorReflection } from './colorReflection';
 import { colorSVG } from './colorSVG';
-import type { StepType } from './handleClickableElement';
+import type { StepType } from './rewindColors';
 
 export const applyColorFromStep = (step: StepType | undefined): void => {
   if (step === undefined) return;

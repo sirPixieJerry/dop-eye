@@ -1,5 +1,5 @@
 import { applyColorFromStep } from './applyColorFromStep';
-import { steps } from './handleClickableElement';
+import { steps } from './rewindColors';
 
 let scrollIndex = 0;
 
