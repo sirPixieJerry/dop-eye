@@ -5,13 +5,7 @@ import { recordColorChange } from './recordColorChange';
 import { resetTimer, setStopRewind } from './rewindColors';
 import { scrollThroughSteps } from './scrollThroughSteps';
 
-export type StepType = {
-  target: string;
-  color: string;
-};
-
 let isScroll = false;
-export const steps: StepType[] = [];
 
 type ClickableElement = HTMLElement & { id: string };
 

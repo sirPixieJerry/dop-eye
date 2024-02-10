@@ -1,4 +1,4 @@
-import { type StepType, steps } from './handleClickableElement';
+import { type StepType, steps, updateStepIndex } from './rewindColors';
 
 const pushStep = (step: StepType): void => {
   steps.push(step);
@@ -11,6 +11,7 @@ export const recordColorChange = (target: Element): void => {
       target: target.id,
       color: computedStyle.backgroundColor,
     });
+    updateStepIndex();
   }
   if (target instanceof SVGElement) {
     const computedStyle = window.getComputedStyle(target);
@@ -18,5 +19,6 @@ export const recordColorChange = (target: Element): void => {
       target: target.id,
       color: computedStyle.fill,
     });
+    updateStepIndex();
   }
 };

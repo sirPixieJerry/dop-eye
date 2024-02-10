@@ -1,5 +1,9 @@
 import { addRippleEffect } from './addRippleEffect';
-import { setPauseRewind } from './rewindColors';
+import {
+  redoColorChange,
+  setPauseRewind,
+  undoColorChange,
+} from './rewindColors';
 
 export const handleMenuButtons = (): void => {
   document.querySelectorAll('button').forEach((button) => {
@@ -10,6 +14,12 @@ export const handleMenuButtons = (): void => {
       if (button.id === 'pause') {
         button.classList.toggle('active');
         setPauseRewind();
+      }
+      if (button.id === 'redo') {
+        redoColorChange();
+      }
+      if (button.id === 'undo') {
+        undoColorChange();
       }
     });
   });

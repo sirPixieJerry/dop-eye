@@ -1,5 +1,12 @@
-import { steps } from './handleClickableElement';
 import { applyColorFromStep } from './applyColorFromStep';
+
+export type StepType = {
+  target: string;
+  color: string;
+};
+
+export const steps: StepType[] = [];
+let stepIndex = steps.length - 1;
 
 const DELAY = 1000;
 const TIMEOUT = 5000;
@@ -9,6 +16,22 @@ let interval: NodeJS.Timeout;
 let stopRewind = true;
 let pauseRewind = false;
 let initialDelay: number;
+
+export const updateStepIndex = (): void => {
+  stepIndex = stepIndex + 1;
+};
+
+export const undoColorChange = (): void => {
+  if (stepIndex < 0) return;
+  applyColorFromStep(steps[stepIndex]);
+  stepIndex = stepIndex - 1;
+};
+
+export const redoColorChange = (): void => {
+  if (stepIndex > steps.length - 1) return;
+  applyColorFromStep(steps[stepIndex]);
+  stepIndex = stepIndex + 1;
+};
 
 const rewind = (): void => {
   const removeStep = (): void => {
