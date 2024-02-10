@@ -23,10 +23,10 @@ Visit the [life demo](sirpixiejerry.github.io/dop-eye/) to try it yourself.
 
 - [x] change element color
 - [x] rewind to original color
-- [x] scroll steps
 - [x] add pause button
 - [x] add undo button
 - [x] add redo button
+- [x] add dragable menu
 - [ ] add info button
 - [ ] add save button
 - [ ] optimization for mobile devices
