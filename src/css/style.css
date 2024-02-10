@@ -187,6 +187,7 @@ img {
   padding-left: 12px;
   cursor: grab;
   border-bottom: 1px solid lightgray;
+  border-radius: 4px 4px 0px 0px;
 }
 
 #drag-handle:hover {
