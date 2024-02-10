@@ -20,6 +20,7 @@ describe('applyColorFromStep', () => {
   it('should apply color to the specified element', () => {
     const mockTarget = document.getElementById(mockStep.target);
     applyColorFromStep(mockStep);
-    expect(mockTarget!.style.backgroundColor).to.equal(mockStep.color);
+    if (!mockTarget) throw new Error('mockTarget not found');
+    expect(mockTarget.style.backgroundColor).to.equal(mockStep.color);
   });
 });
