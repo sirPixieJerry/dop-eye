@@ -27,6 +27,6 @@ Visit the [life demo](sirpixiejerry.github.io/dop-eye/) to try it yourself.
 - [x] add pause button
 - [x] add undo button
 - [x] add redo button
-- [x] add info button
+- [ ] add info button
 - [ ] add save button
 - [ ] optimization for mobile devices
