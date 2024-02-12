@@ -11,7 +11,7 @@
     "build": "parcel build src/index.html --public-url ./",
     "test": "mocha --require ts-node/register src/test/setup.ts src/**/*.test.ts",
     "test:watch": "npm test -- --watch --recursive --extension ts",
-    "lint": "npx eslint 'src/**/*.{js,ts,tsx}' --quiet || exit 1",
+    "lint": "tsc --noEmit && npx eslint 'src/**/*.{js,ts,tsx}' --quiet || exit 1",
     "type-check": "npx tsc --noEmit --pretty --project . || exit 1"
   },
   "repository": {
@@ -30,7 +30,7 @@
     "@typescript-eslint/parser": "^5.59.9",
     "chai": "^4.4.1",
     "eslint": "^8.56.0",
-    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-import": "^2.29.1",
     "jsdom": "^24.0.0",
     "mocha": "^10.2.0",
     "parcel": "^2.9.2",
