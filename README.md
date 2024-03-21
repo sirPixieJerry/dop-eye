@@ -17,7 +17,7 @@ I became intrigued by the potential of the Document Object Model (DOM) and the u
 The eye is constructed using a combination of div and SVG elements and is interactive, responding to user clicks. Upon clicking, a random RGB code is generated to color the relevant element. A mechanic is implemented to track the user's actions in the background. After five seconds of inactivity, the mechanic triggers a playback of the recorded actions, restoring the eye's colors to their original state. That's the gist of it.
 
 <a name="live-demo"></a>
-Visit the [life demo](sirpixiejerry.github.io/dop-eye/) to try it yourself.
+Visit the [life demo](https://sirpixiejerry.github.io/dop-eye) to try it yourself.
 
 ### DEVELOPER ROADMAP <a name="roadmap"></a>
 
